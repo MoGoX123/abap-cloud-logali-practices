@@ -17,6 +17,9 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+*   1. Tipo de datos elementales
+
+
     DATA: mv_purchase_date TYPE d,
           mv_purchase_time TYPE t.
 
@@ -25,6 +28,7 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
 
     out->write( |mv_purchase_date: { mv_purchase_date }| ).
     out->write( |mv_purchase_time: { mv_purchase_time }| ).
+
 
     DATA: mv_price TYPE f VALUE '10.5',
           mv_tax   TYPE i VALUE 16.
@@ -50,6 +54,8 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
     out->write( |mv_id_code: { mv_id_code }| ).
     out->write( |mv_qr_code: { mv_qr_code }| ).
 
+*   2. Tipo de datos complejos
+
     TYPES:
       BEGIN OF mty_customer,
         id       TYPE i,
@@ -67,6 +73,8 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
     out->write( |ls_customer-customer: { ls_customer-customer }| ).
     out->write( |ls_customer-age: { ls_customer-age }| ).
 
+*   3. Tipo de datos de referencia
+
     DATA ms_employees TYPE /dmo/employee_hr.
 
     ms_employees-first_name = 'Eduardo'.
@@ -77,6 +85,8 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
     out->write( |ms_employees-last_name: { ms_employees-last_name }| ).
     out->write( |ms_employees-salary: { ms_employees-salary }| ).
 
+*   4. Objetos de datos
+
     DATA: mv_product      TYPE string VALUE 'Laptop',
           MV_BAR_CODE_aux TYPE string VALUE '12121 121211',
           mv_bar_code     TYPE xstring.
@@ -86,6 +96,7 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
     out->write( |mv_product: { mv_product }| ).
     out->write( |mv_bar_code: { mv_bar_code }| ).
 
+*   5. Constantes
 
     CONSTANTS:
       mc_purchase_date TYPE d VALUE '20261005',
@@ -101,13 +112,13 @@ CLASS zcl_lab_01_var_eduardo IMPLEMENTATION.
       mc_product       TYPE string VALUE 'Laptop',
       mc_bar_code_aux  TYPE string VALUE '12121 121211'.
 
+*   6. Declaraciones en Línea
+
     DATA(lv_product) = mv_product.
     DATA(lv_bar_code) = mv_bar_code.
 
     out->write( |lv_product: { lv_product }| ).
     out->write( |lv_bar_code: { lv_bar_code }| ).
-
-
 
   ENDMETHOD.
 ENDCLASS.
