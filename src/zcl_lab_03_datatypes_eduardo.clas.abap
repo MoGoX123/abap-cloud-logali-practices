@@ -141,6 +141,12 @@ CLASS zcl_lab_03_datatypes_eduardo IMPLEMENTATION.
     out->write( |mv_timestamp: { mv_timestamp } | ).
 
 
+    DATA: lv_string TYPE string VALUE 'a1b2c3',
+          lv_char   TYPE i.
+
+    lv_char = lv_string.
+    out->write( lv_char ).
+
   ENDMETHOD.
 
 ENDCLASS.
