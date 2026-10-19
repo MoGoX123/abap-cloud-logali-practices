@@ -14,13 +14,6 @@ ENDCLASS.
 CLASS zcl_lab_05_2_invoice_eduardo IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
-    DATA: lv_string   TYPE string VALUE 'ABAP CLOUD',
-          lv_position TYPE i.
-
-    lv_position = find_any_of( val = lv_string sub = 'OU' ).
-
-    out->write( |El caracter se ha encontrado en la posicion { lv_position } | ).
-
 *    1. OVERLAY
 *    Declarar la siguiente variable del tipo “STRING”:
 *        ● LV_SALE, asignándole el valor “Purchase Completed”.·
